@@ -103,7 +103,6 @@ body {
 }
 
 .top-navigation .trigram {
-  appearance: none;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -112,18 +111,16 @@ body {
 
 .top-navigation ul {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   list-style-type: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .top-navigation ul li {
-  width: 100px;
-  text-align: right;
-}
-
-.top-navigation ul li a,
-.top-navigation .trigram {
-  text-decoration: none;
-  color: #737373;
+  width: auto;
 }
 
 .top-navigation ul li a.active {
@@ -380,6 +377,9 @@ footer .social-icons .icon {
   text-decoration: none;
   color: #969696;
 }
+ul li:last-child {
+  color: white;
+}
 
 .footer-footer {
   font-size: 12px;
@@ -388,4 +388,223 @@ footer .social-icons .icon {
   text-align: center;
   border-top: 1px solid #2e2e2e;
   padding-top: 30px;
+}
+@media (min-width: 1024px) AND (max-width: 2000px) {
+  .content,
+  .header-content {
+    display: flex;
+  }
+  .active {
+    display: none;
+  }
+  .trigram {
+    display: none;
+  }
+
+  .button {
+    display: none;
+  }
+  nav ul li {
+    justify-content: center;
+  }
+  div .instagram,
+  .fa-inatagram {
+    color: white;
+  }
+  .social-icons > div:nth-child(3) .fa {
+    color: white;
+    background-color: black;
+  }
+  div .icon > div:nth-child(3) .fa {
+    background-color: white;
+  }
+}
+
+@media (min-width: 768px) AND (max-width: 1023px) {
+  .content,
+  .header-content {
+    display: flex;
+  }
+  .top-navigation ul li {
+    display: none;
+  }
+  button .trigram {
+    display: flex;
+  }
+  .portfolio-item {
+    display: flex;
+    flex-direction: row;
+  }
+  .portfolio-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .portfolio-img-wrapper {
+    /*set the width size of image of employee*/
+    max-width: 255px;
+  }
+  .teammate {
+    /*i was able to display rows of 2 with this syntax for employee profiles*/
+    width: calc(50% - 21.25px);
+  }
+  .teammate-img-wrapper {
+    width: 18rem;
+    gap: 15px;
+  }
+  .teammates-list-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+  }
+  .teammate-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 10px; */
+    /* text-align: center; */
+    padding-right: 5rem;
+  }
+  footer .social-icons div {
+    /*i displayed the icons of the social media platforms with this syntax*/
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    text-transform: uppercase;
+  }
+
+  .social-icons span {
+    display: none; /* Hide the text */
+  }
+  div .footer-contacts {
+    /*im not sure how to better align the company address*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 360px) AND (max-width: 767px) {
+  .content,
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .top-navigation ul li {
+    display: none;
+  }
+  .section-info {
+    align-items: center;
+    justify-content: space-between;
+  }
+  button .trigram {
+    display: flex;
+  }
+  .portfolio-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .portfolio-item-info {
+    align-items: center;
+    justify-content: center;
+  }
+  .portfolio-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+  }
+  .portfolio-content {
+    text-align: center;
+  }
+  .content h2 {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 3rem;
+  }
+  .header::before,
+  .header::after {
+    display: none;
+  }
+  .content p.subtext {
+    width: auto;
+    text-align: center;
+    justify-content: space-between;
+  }
+
+  .teammate-img-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 240px;
+    height: 220px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+  }
+  .teammates-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px;
+    gap: 10px;
+  }
+  .teammate-name,
+  .teammate-role {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .teammate {
+    /*displays the card as a whole*/
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+    border: solid 2px black;
+  }
+  .teammate-data {
+    /*image and data layout*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .teammate-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 0 25px;
+  }
+  .social-icons {
+    /*i displayed the icons of the social media platforms with this syntax*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    text-transform: uppercase;
+  }
+  .footer-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
